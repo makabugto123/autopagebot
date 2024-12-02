@@ -4,7 +4,7 @@ module.exports = {
   name: 'ytmp4',
   description: 'Search Youtube Song And Download!',
   author: 'Dale Mekumi', 
-  usage: 'ytmp3 songtitle',
+  usage: 'ytmp4 video title',
   async execute(senderId, args, pageAccessToken, sendMessage) {
 
     const prompt = args.join(' ');
