@@ -13,7 +13,7 @@ module.exports = {
       return sendMessage(senderId, { text: '🤖 Please provide a question for GPT-4 (e.g., "-gpt4 What is the weather today?").' }, pageAccessToken);
     }
 
-    const apiUrl = `https://api.kenliejugarap.com/freegpt-openai/?question=${encodeURIComponent(question)}`;
+    const apiUrl = `https://kaiz-apis.gleeze.com/api/gpt-4o?q=${encodeURIComponent(question)}&uid=${senderId}`;
 
     try {
       const response = await axios.get(apiUrl);
