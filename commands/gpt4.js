@@ -13,11 +13,12 @@ module.exports = {
       return sendMessage(senderId, { text: '🤖 Please provide a question for GPT-4 (e.g., "-gpt4 What is the weather today?").' }, pageAccessToken);
     }
 
-    const apiUrl = `https://kaiz-apis.gleeze.com/api/gpt-4o?q=${encodeURIComponent(question)}&uid=${senderId}`;
+    
 
     try {
+      const apiUrl = `https://kaiz-apis.gleeze.com/api/gpt-4o?q=${encodeURIComponent(question)}&uid=${senderId}`;
       const response = await axios.get(apiUrl);
-      if (response.data.status) {
+      
         const reply = response.data.response;
 
         // Split the reply into chunks of 2000 characters or less
@@ -25,7 +26,7 @@ module.exports = {
         const chunks = [];
         for (let i = 0; i < reply.length; i += chunkSize) {
           chunks.push(reply.slice(i, i + chunkSize));
-        }
+        
 
         // Send each chunk as a separate message
         for (const chunk of chunks) {
