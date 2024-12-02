@@ -23,7 +23,7 @@ fs.readdirSync(path.join(__dirname, '../commands'))
   });
 
 // Internal API endpoints
-const INTERNAL_API_BASE = 'https://databasefbpage-la20.onrender.com'; //put your own database url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
+const INTERNAL_API_BASE = 'https://databasefbpage-1xz0.onrender.com'; //put your own database url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
 const ENDPOINT_FIND = `${INTERNAL_API_BASE}/find?json=`;
 
 /**
