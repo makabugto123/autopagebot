@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const VERIFY_TOKEN = 'pagebot';
+const VERIFY_TOKEN = 'hakdog';
 const INTERNAL_API_BASE = 'http://fi3.bot-hosting....'; // Put your Own Database Url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
 
 // Edit Also the handlemessage Database Url
