@@ -23,10 +23,24 @@ module.exports = {
       const imgUrl = imageData[senderId];
       try {
         const visionResponse = await axios.get(`https://jerome-web.onrender.com/service/api/gemini?ask=${encodeURIComponent(prompt)}&imgurl=${encodeURIComponent(imgUrl)}`);
+        const ha = visionResponse.data;
+        const hak = visionResponse.data.vision;
         
-        if (visionResponse.data && visionResponse.data.vision) {
+        if (ha && hak) {
           // Send the vision response to the user
-          await sendMessage(senderId, { text: visionResponse.data.vision }, pageAccessToken);
+
+          const parts = [];
+
+            for (let i = 0; i < hak.length; i += 1999) {
+                parts.push(hak.substring(i, i + 1999));
+            }
+
+            // send all msg parts
+            for (const part of parts) {
+                await sendMessage(senderId, { text: part }, pageAccessToken);
+            }
+          
+         // await sendMessage(senderId, { text: visionResponse.data.vision }, pageAccessToken);
         } else {
           await sendMessage(senderId, { text: 'Failed to recognize the image. Please try again later.' }, pageAccessToken);
         }
@@ -43,10 +57,22 @@ module.exports = {
       // If there is no image URL stored, proceed with the text-only response
       try {
         const textResponse = await axios.get(`https://jerome-web.onrender.com/service/api/gemini?ask=${encodeURIComponent(prompt)}&imgurl=`);
+        const hala = textResponse.data;
+        const halaa = textResponse.data.textResponse;
         
-        if (textResponse.data && textResponse.data.textResponse) {
+        if (hala && halaa) {
           // Send the text response to the user
-          await sendMessage(senderId, { text: textResponse.data.textResponse }, pageAccessToken);
+          const parts1 = [];
+
+            for (let i = 0; i < halaa.length; i += 1999) {
+                parts1.push(halaa.substring(i, i + 1999));
+            }
+
+            // send all msg parts
+            for (const part1 of parts1) {
+                await sendMessage(senderId, { text: part1 }, pageAccessToken);
+            }
+         // await sendMessage(senderId, { text: textResponse.data.textResponse }, pageAccessToken);
         } else {
           await sendMessage(senderId, { text: 'Failed to generate a response. Please try again later.' }, pageAccessToken);
         }
