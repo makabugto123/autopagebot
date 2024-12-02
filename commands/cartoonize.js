@@ -21,7 +21,7 @@ module.exports = {
       const imgUrl = imageData[senderId];
       try {
         // Call the background removal API
-        const response = await axios.get(`https://api.kenliejugarap.com/bgremoved/?imgurl=${encodeURIComponent(imgUrl)}`);
+        const response = await axios.get(`https://api.kenliejugarap.com/cartoonizer/?imgurl=${encodeURIComponent(imgUrl)}`);
         
         if (response.data.status) {
           const processedImageUrl = response.data.response; // Extract the image URL from the response
