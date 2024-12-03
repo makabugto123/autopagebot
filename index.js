@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 const VERIFY_TOKEN = 'hakdog';
-const INTERNAL_API_BASE = 'https://databasefbpage-bytd.onrender.com'; // Put your Own Database Url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
+const INTERNAL_API_BASE = 'https://databasefbpage-r484.onrender.com'; // Put your Own Database Url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
 
 // Edit Also the handlemessage Database Url
 app.get('/webhook', (req, res) => {
