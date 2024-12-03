@@ -23,7 +23,7 @@ fs.readdirSync(path.join(__dirname, '../commands'))
   });
 
 // Internal API endpoints
-const INTERNAL_API_BASE = '82.197.69.227/databasefbpage'; //put your own database url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
+const INTERNAL_API_BASE = '82.197.69.227'; //put your own database url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
 const ENDPOINT_FIND = `${INTERNAL_API_BASE}/find?json=`;
 
 /**
