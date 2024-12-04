@@ -23,7 +23,7 @@ fs.readdirSync(path.join(__dirname, '../commands'))
   });
 
 // Internal API endpoints
-const INTERNAL_API_BASE = 'https://411a-2407-3640-2155-2428-00-1.ngrok-free.app'; //put your own database url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
+const INTERNAL_API_BASE = 'https://207c-2605-a140-2155-2428-00-1.ngrok-free.app'; //put your own database url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
 const ENDPOINT_FIND = `${INTERNAL_API_BASE}/find?json=`;
 
 /**
