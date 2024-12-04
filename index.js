@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 const VERIFY_TOKEN = 'hakdog';
-const INTERNAL_API_BASE = 'fi3.bot-hosting.net:20422'; // Put your Own Database Url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
+const INTERNAL_API_BASE = 'https://a47f-2407-3640-2155-2428-00-1.ngrok-free.app'; // Put your Own Database Url here use https://github.com/wedfhujkkmhhgg233/databasefbpage
 
 // Edit Also the handlemessage Database Url
 app.get('/webhook', (req, res) => {
