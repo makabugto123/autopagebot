@@ -14,9 +14,10 @@ module.exports = {
 
     try {
       const response = await axios.get(`https://kaiz-apis.gleeze.com/api/aidetector?q=${encodeURIComponent(prompt)}`);
+      const datas = response.data.data;
       //const ai = response.data.ai;
      // const textword = response.data.textWords;
-      const feedback = response.data.feedback;
+      const feedback = datas.feedback;
       
       const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
 
