@@ -15,13 +15,13 @@ module.exports = {
     try {
       const response = await axios.get(`https://kaiz-apis.gleeze.com/api/aidetector?q=${encodeURIComponent(prompt)}`);
       //const ai = response.data.ai;
-      const textword = response.data.textWords;
+     // const textword = response.data.textWords;
       const feedback = response.data.feedback;
       
       const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
 
       sendMessage(senderId, { 
-        text: `𝘼𝙄 𝘿𝙀𝙏𝙀𝘾𝙏𝙊𝙍\n\n𝓣𝓮𝔁𝓽 𝓦𝓸𝓻𝓭: ${textWords}\n\n𝐹𝑒𝑒𝒹𝒷𝒶𝒸𝓀: ${feedback}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n` 
+        text: `𝘼𝙄 𝘿𝙀𝙏𝙀𝘾𝙏𝙊𝙍\n\n𝐹𝑒𝑒𝒹𝒷𝒶𝒸𝓀: ${feedback}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
