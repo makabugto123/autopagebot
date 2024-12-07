@@ -2,7 +2,7 @@ const axios = require("axios");
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: "gpt4o",
+  name: "trylang",
   description: "interact with gpt4o pro with generate & recognize image",
   author: "Emman Co",
 
