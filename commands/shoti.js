@@ -8,11 +8,11 @@ module.exports = {
 
   async execute(senderId, args, pageAccessToken) {
     try {
-      const apiUrl = 'https://shoti.kenliejugarap.com/getvideo.php?apikey=shoti-5ba14cf02b7b8eb43e6c6ccf0739ada50ab5ca8325e5c41971080d5877a67d23753d10fa9e5cd51b61a6c98315221ad47adf3f51d740ea9f6982a56c1536e0ef010b7e8a02035f28f57914d064641785a12bc7024c';
+      const apiUrl = 'https://kaiz-apis.gleeze.com/api/shoti';
       const response = await axios.get(apiUrl);
 
-      if (response.data && response.data.videoDownloadLink) {
-        const videoUrl = response.data.videoDownloadLink;
+      if (response.data && response.data.shoti.videoUrl) {
+        const videoUrl = response.data.shoti.videoUrl;
 
         // Send video attachment only
         const videoMessage = {
